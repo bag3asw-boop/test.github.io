@@ -453,23 +453,30 @@ font-family: "Newsreader", serif;
 }
 
 @media (max-width:780px){
-    body{
-    }
     main{
         flex-direction: column;
-        padding: 20px;
+        padding: 30px;
         align-items: center;
+        width: 100%;
     }
     .book1{
         width: 60%;
         margin-left: 20%;
+        text-align: center;
     }
     .book2{
         width: 60%;
         margin-left: 20%;
-
+        text-align: center;
     }
-    
+    .hb , .hb2{
+        text-align: center;
+        margin-left: 0;
+    }
+        .switch,.switch2{
+        max-width:100%;
+    }
+
     .order{
         margin-left: auto;
         margin-right: auto;
