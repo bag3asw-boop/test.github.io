@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link id="theme-style" rel="stylesheet" href="light.css">
+    <title>YourLibrary|cart</title>
+</head>
+<body>
+
+    <header class="head">
+        <div class="logo">
+            <img src="YOUR LIBRARY.svg" alt="">
+        </div>
+
+        <div class="links">
+            <a href="">Home</a>
+            <a href="">Explore</a>
+            <a href="">My Shelf</a>
+            <a href="">Contact Us</a>
+            <a href="">About Us</a>
+        </div>
+
+        <div class="search">
+            <div class="li">
+                <a href="#" onclick="setTheme('light'); return false;">
+                    <img src="sun-alt-svgrepo-com.svg" alt="">
+                </a>
+
+                <a href="#" onclick="setTheme('dark'); return false;">
+                    <img src="moon-svgrepo-com.svg" alt="">
+                </a>
+            </div>
+
+            <hr>
+
+            <div class="ri">
+                <a href="index.html"><img src="cart-svgrepo-com (2).svg" alt=""></a>
+                <a href=""><img src="search-svgrepo-com.svg" alt=""></a>
+                <a href=""><img src="profile-1341-svgrepo-com.svg" alt=""></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="mm">
+        <h2 class="yourcart">Your cart</h2>
+        <p class="pp">Review your selections before proceeding to checkout.</p>
+    </div>
+
+    <main>
+
+        <section class="price">
+
+            <div class="book1">
+                <div class="icon">
+                    <img src="book.svg" alt="">
+                </div>
+
+                <div class="hb">
+                    <div>
+                        <h3>The Shadow of the Wind</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                    <div class="switch">
+                        <button class="option active" data-price="24">
+                            Buy ($24.00)
+                        </button>
+
+                        <button class="option" data-price="4.5">
+                            Borrow ($4.50)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book2">
+                <div class="icon2">
+                    <img src="book.svg" alt="">
+                </div>
+
+                <div class="hb2">
+                    <div>
+                        <h3>The Shadow of the Wind</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                    <div class="switch2">
+                        <button class="option2 active2" data-price="24">
+                            Buy ($24.00)
+                        </button>
+
+        <button class="option2" data-price="4.5">Borrow ($4.50) </button>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section class="order">
+            <h2>Order Summary</h2>
+            <div class="calc">
+                <div>
+                    <h4>Subtotal</h4>
+                    <h4 id="subtotal">$0.00</h4>
+                </div>
+                <div>
+                    <h4>Shipping</h4>
+                    <h4>Calculated at checkout</h4>
+                </div>
+                <div>
+                    <h4>Estimated Tax</h4>
+                    <h4 id="tax">$0.00</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="pay">
+                <div>
+                    <h4>Total</h4>
+                    <h4 id="total">$0.00</h4>
+                </div>
+
+                <button>PROCEED TO CHECKOUT</button>
+            </div>
+        </section>
+
+    </main>
+
+    <hr class="c">
+
+    <footer class="foot">
+        <div class="left">
+            <img src="YOUR LIBRARY.svg" alt="">
+            <p>© 2024 The Living Library. All rights reserved.</p>
+        </div>
+
+        <div class="right">
+            <a href="#">Institutional info</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of service</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
+
+<script>
+function setTheme(theme) {
+    let cssFile = document.getElementById("theme-style");
+    cssFile.href = theme === "light" ? "light.css" : "dark.css";
+    localStorage.setItem("theme", theme);
+}
+
+window.onload = function () {
+
+    // load saved theme
+    let savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.getElementById("theme-style").href = savedTheme + ".css";
+    }
+
+    function updatePrice() {
+        let subtotal = 0;
+
+        const active1 = document.querySelector(".option.active");
+        const active2 = document.querySelector(".option2.active2");
+
+        if (active1) subtotal += Number(active1.dataset.price);
+        if (active2) subtotal += Number(active2.dataset.price);
+
+        let tax = subtotal * 0.08;
+        let total = subtotal + tax;
+
+        document.getElementById("subtotal").textContent =
+            "$" + subtotal.toFixed(2);
+
+        document.getElementById("tax").textContent =
+            "$" + tax.toFixed(2);
+
+        document.getElementById("total").textContent =
+            "$" + total.toFixed(2);
+    }
+
+    // first switch
+    document.querySelectorAll(".option").forEach(button => {
+        button.addEventListener("click", () => {
+            document.querySelectorAll(".option")
+                .forEach(btn => btn.classList.remove("active"));
+
+            button.classList.add("active");
+            updatePrice();
+        });
+    });
+
+    // second switch
+    document.querySelectorAll(".option2").forEach(button => {
+        button.addEventListener("click", () => {
+            document.querySelectorAll(".option2")
+                .forEach(btn => btn.classList.remove("active2"));
+
+            button.classList.add("active2");
+            updatePrice();
+        });
+    });
+    updatePrice();
+};
+</script>
+
+</body>
+</html>
