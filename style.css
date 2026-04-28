@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *{
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 body{
@@ -23,20 +24,12 @@ body{
     gap:20px;
     font-size:21px;
     font-family:'Newsreader';
-    margin-bottom:10px;
-    
-}
-
-.logo{
-    flex-shrink:0;
-    overflow:hidden;
-    padding-bottom:20px;
 }
 
 .logo img{
     width:112px;
     height:auto;
-    padding-top: 20px;
+    padding-top:20px;
 }
 
 .links{
@@ -47,8 +40,7 @@ body{
     gap:35px;
     font-weight:bold;
     font-family:"Newsreader", serif;
-    font-size: 20px;
-    height: max-content;
+    font-size:20px;
 }
 
 .links a{
@@ -58,35 +50,25 @@ body{
 }
 
 .links a:hover,
-.links a:active{
+.links a:active,
+.links .act{
     color:#D99544;
 }
 
-.bu{
-    width:1px;
-}
-
 .search{
-    flex-shrink:0;
     display:flex;
     gap:25px;
     align-items:center;
-    color:#434241;
-}
-
-.search a{
-    text-decoration:none;
 }
 
 .search a img{
     width:30px;
 }
 
-.li,
-.ri{
+.li,.ri{
     display:flex;
-    align-items:center;
     gap:15px;
+    align-items:center;
 }
 
 .search hr{
@@ -95,166 +77,52 @@ body{
     background:black;
     border:none;
 }
-.links .act{
-    color: #D99544;
-}
+
 main{
-    min-height:600px;
-}
-
-.c{
-    width:calc(100% - 128px);
-    margin:auto;
-}
-
-.foot{
-    width:100%;
-    padding:30px 64px;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
+    gap:30px;
+    padding:20px 70px 0 150px;
+    min-height:600px;
+    align-items:flex-start;
 }
 
-.left{
+.mm{
+    font-size:25px;
+    margin-left:50px;
+}
+
+.price{
+    flex:1;
     display:flex;
     flex-direction:column;
+    gap:40px;
+    font-family:"Newsreader", serif;
+}
+
+.book1,
+.book2{
+    background:#fff;
+    width:100%;
+    max-width:813px;
+    display:flex;
+    padding:20px;
     gap:10px;
 }
 
-.left img{
-    width:112px;
-    height:auto;
+.book1 .icon,
+.book2 .icon2{
+    width:128px;
 }
 
-.left p{
-    margin:0;
-    color:#543B25;
-    font-family:'Poppins';
-    font-size:15px;
-}
-
-.right{
+.book1 .hb,
+.book2 .hb2{
+    font-size:18px;
     display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+    flex-direction:column;
+    gap:40px;
+    margin-left:15px;
 }
 
-.right a{
-    text-decoration:none;
-    color:gray;
-}
-
-@media (max-width:1024px){
-
-    .head{
-        padding:25px 30px;
-        gap:15px;
-    }
-
-    .links{
-        gap:20px;
-        font-size:18px;
-    }
-
-    .search a img{
-        width:25px;
-    }
-
-    .foot{
-        padding:25px 30px;
-    }
-
-    .c{
-        width:calc(100% - 60px);
-    }
-}
-
-@media (max-width:768px){
-
-    .head{
-        flex-direction:column;
-        justify-content:center;
-        text-align:center;
-        padding:25px 20px;
-    }
-
-    .logo{
-        padding-bottom:0;
-    }
-
-    .links{
-        flex-wrap:wrap;
-        gap:15px;
-        font-size:17px;
-    }
-
-    .search{
-        gap:15px;
-    }
-
-    .foot{
-        flex-direction:column;
-        text-align:center;
-        gap:20px;
-    }
-
-    .right{
-        justify-content:center;
-    }
-
-    .c{
-        width:calc(100% - 40px);
-    }
-}
-/*the main content start from here ( Omar ) */
-.mm{
-    font-size: 25px;
-    margin-left: 50px;
-}
-.mm h2{
-    display: inline;
-}
-main{
-    display: flex;
-    gap: 30px;
-    padding-right: 70px ;
-    padding-left: 150px ;
-    padding-top: 20px;
-    
-}
-.price{
-    width: 813.33px;
-    height: 524px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-font-family: "Newsreader", serif;
-
-}
-.book1{
-    background-color: #FFFFFF;
-    width: 813.33px;
-    height: 242px;
-    display: flex;
-    padding-left: 20px;
-    gap: 10px;
-}
-.book1 .icon{
-    padding-top: 20px;
-    width: 128px;
-    height: 192px;
-}
-.book1 .hb{
-    padding-top: 15px;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    margin-left: 15px;
-}
-.book1 .hb h3{
-    display: inline;
-}
 .hb .switch{
     width: 291px;
     height: 48px;
@@ -281,31 +149,6 @@ font-family: "Newsreader", serif;
     background: white;
     color: #D99544;
     box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-
-.book2{
-    background-color: #FFFFFF;
-    width: 813.33px;
-    height: 242px;
-    display: flex;
-    padding-left: 20px;
-    gap: 10px;
-}
-.book2 .icon2{
-    padding-top: 20px;
-    width: 128px;
-    height: 192px;
-}
-.book2 .hb2{
-    padding-top: 15px;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    margin-left: 15px;
-}
-.book2 .hb2 h3{
-    display: inline;
 }
 .hb2 .switch2{
     width: 291px;
@@ -334,9 +177,10 @@ font-family: "Newsreader", serif;
     color: #D99544;
     box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
+
 .order{
-    width:395px;
-    height:424.58px;
+    width:100%;
+    max-width:395px;
     background:#fff;
     border:1px solid #e5e1dc;
     border-radius:10px;
@@ -348,28 +192,17 @@ font-family: "Newsreader", serif;
     margin:0 0 28px 0;
     font-family:"Newsreader", serif;
     font-size:32px;
-    font-weight:400;
-    color:#222;
 }
 
-.calc{
+.calc,.pay{
     display:flex;
     flex-direction:column;
-    gap:18px;
+    gap:1px;
 }
 
 .calc div,.pay div{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    gap:10px;
-}
-
-.calc h4,.pay h4{
-    margin:0;
-    font-size:16px;
-    font-weight:400;
-    color:#333;
 }
 
 .order hr{
@@ -377,18 +210,6 @@ font-family: "Newsreader", serif;
     height:1px;
     background:#e5e5e5;
     margin:28px 0;
-}
-
-.pay{
-    display:flex;
-    flex-direction:column;
-    gap:28px;
-}
-
-.pay div h4{
-    font-size:18px;
-    font-weight:700;
-    color:#222;
 }
 
 .pay button{
@@ -401,43 +222,48 @@ font-family: "Newsreader", serif;
     font-size:14px;
     font-weight:700;
     cursor:pointer;
-    transition:.3s;
 }
 
-.pay button:hover{
-    background-color: #1C1B1B;
+.foot{
+    display:flex;
+    justify-content:space-between;
+    padding:30px 64px;
 }
-.yourcart{
-    font-family: "Newsreader", serif;
+
+.left img{
+    width:112px;
 }
-.pp{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+
+.right{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
 }
-@media (max-width:1024px) and (min-width:769px){
+
+.right a{
+    text-decoration:none;
+    color:gray;
+}
+
+.c{
+    width:calc(100% - 128px);
+    margin:auto;
+}
+
+@media (max-width:1024px){
+
     main{
         padding:20px 30px;
         flex-wrap:wrap;
         justify-content:center;
     }
 
-    .price{
-        width:100%;
+    .order{
         max-width:100%;
     }
 
-    .book1,
-    .book2{
-        width:100%;
-    }
-
-    .order{
-        width:100%;
-        max-width:500px;
-    }
     .head{
-        padding:25px 30px;
+        padding:20px 30px;
         flex-wrap:wrap;
     }
 
@@ -446,40 +272,71 @@ font-family: "Newsreader", serif;
         gap:20px;
         font-size:18px;
     }
-
-    .c{
-        width:calc(100% - 60px);
-    }
 }
 
-@media (max-width:780px){
+@media (max-width:768px){
+
+    .head{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
     main{
-        flex-direction: column;
-        padding: 30px;
-        align-items: center;
-        width: 100%;
+        flex-direction:column;
+        padding:20px;
+        align-items:center;
     }
-    .book1{
-        width: 60%;
-        margin-left: 20%;
-        text-align: center;
+
+    .mm{
+        margin-left:0;
+        text-align:center;
     }
-    .book2{
-        width: 60%;
-        margin-left: 20%;
-        text-align: center;
+
+    .book1,.book2{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
     }
-    .hb , .hb2{
-        text-align: center;
-        margin-left: 0;
+
+    .book1 .hb,
+    .book2 .hb2{
+        margin-left:0;
+        align-items:center;
     }
-        .switch,.switch2{
+
+    .switch,.switch2{
         max-width:100%;
     }
 
-    .order{
-        margin-left: auto;
-        margin-right: auto;
+    .foot{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
     }
-    
+
+    .right{
+        justify-content:center;
+    }
+}
+
+@media (max-width:480px){
+
+    .links{
+        font-size:14px;
+        gap:10px;
+    }
+
+    .logo img{
+        width:90px;
+    }
+
+    .order h2{
+        font-size:24px;
+    }
+
+    .pay button{
+        height:50px;
+        font-size:12px;
+    }
 }
